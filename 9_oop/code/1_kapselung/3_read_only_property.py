@@ -1,0 +1,3 @@
+"""
+Read only property example
+"""
