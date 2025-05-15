@@ -42,3 +42,48 @@ Vector(x=3, y=11)
 """
 
 from __future__ import annotations
+
+
+class Vector:
+    def __init__(self, x: int, y: int) -> None:
+        self.x = x
+        self.y = y
+
+    @classmethod
+    def from_dict(cls, d: dict) -> Vector:
+        d = {name.replace("_point", ""): value for name, value in d.items()}
+        return cls(**d)
+
+    def __add__(self, other):
+        if isinstance(other, Vector):
+            return Vector(self.x + other.x, self.y + other.y)
+        raise TypeError("Only Vector instances can be added")
+
+    def __repr__(self) -> str:
+        return f"Vector(x={self.x}, y={self.y})"
+
+
+if __name__ == "__main__":
+    v1 = Vector(x=10, y=30)
+    print(v1)
+
+    d = {
+        "y_point": 10,
+        "x_point": 4,
+    }
+
+    v2 = Vector.from_dict(d)
+    print(v2)
+    print(type(v2))
+
+    d = {
+        "x_point": 2,
+        "y_point": 10,
+    }
+
+    v3 = Vector.from_dict(d)
+    print(v3)
+
+    # Vektoraddition
+    v4 = v1 + v2
+    print(v4)
