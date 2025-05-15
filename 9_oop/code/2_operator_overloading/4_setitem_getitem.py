@@ -11,3 +11,25 @@ wie get(key) oder set(key, value) zu verwenden.
 Dieses Konzept wird häufig in containerartigen Klassen, Datenstrukturen
 und internen APIs verwendet.
 """
+
+
+class A:
+    def __init__(self):
+        self.d = {}
+
+    def __setitem__(self, key, value):
+        self.d[key] = value
+
+    def __getitem__(self, key):
+        return self.d[key]
+
+    def __call__(self):
+        print("HI!  ich wurde aufgerufen")
+
+
+##############################################
+a = A()
+a["x"] = 3
+print(a["x"])
+
+a()  # a.__call__()

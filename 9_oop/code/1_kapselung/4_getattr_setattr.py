@@ -21,6 +21,7 @@ class BananaTree:
     def __init__(self, bananas):
         self.rotten = 0
         self.bananas = bananas
+        print(self.__class__.__name__)  # Name der Klasse
 
     @property
     def bananas(self):
@@ -38,3 +39,9 @@ class BananaTree:
 
 b = BananaTree(56)
 c = BananaTree(11)
+
+print(getattr(b, "bananas"))  # b.bananas
+setattr(b, "size", 343)  # b.size = 343
+
+delattr(b, "size")  # del b.size
+print(vars(b))

@@ -12,3 +12,20 @@ Klassendaten benötigen.
 
 Aufruf: direkt über Klasse oder Instanz möglich (Klasse.methode()).
 """
+
+
+class TemperaturRechner:
+
+    def generate_value(self):
+        pass
+
+    @staticmethod
+    def celsius_to_fahrenheit(celsius: float):
+        print("umrechnen")
+
+
+a = TemperaturRechner()
+a.generate_value()
+
+# Nutzen
+grad = TemperaturRechner.celsius_to_fahrenheit(34)

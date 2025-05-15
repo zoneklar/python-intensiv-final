@@ -17,3 +17,36 @@ sind:
 Diese Datei zeigt den Unterschied beider Methoden mit praktischen
 Beispielen.
 """
+
+
+class Person:
+    """Das hier beschreibt eine Persons."""
+
+    def __init__(self, first_name: str, last_name: str, age: int) -> None:
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def __str__(self) -> str:
+        """String Repräsentation eines Personen-Objekts."""
+        return self.first_name
+
+    def __repr__(self) -> str:
+        """Interne Repräsentation für Debugging, Logging, Testing."""
+        return f"Person({self.first_name!r}, {self.last_name!r}, {self.age!r})"
+
+
+bob = Person("bob", "Meyer", 34)
+alice = Person("Alice", "Doe", 78)
+
+bob.country = "Deutschland"  # schlechter Stil, Attribute nachträglich zufügen
+print(bob.first_name)  # lesend
+bob.first_name = "Bobby"  # schreibend
+
+# print bob objekt
+print("Bob Objekt: ", bob)  #  String-Repräsentation eines Bob Objekts
+# print(dir(bob))
+print("test")  # String-Repräsentation eines Strings
+
+persons = [bob, alice]
+print(persons)

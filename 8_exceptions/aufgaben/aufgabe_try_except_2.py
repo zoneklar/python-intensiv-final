@@ -27,8 +27,11 @@ Die Wörter lassen sich entweder mit str.split() oder
 mit re.findall(r"\w+", text) zählen.
 """
 
+import re
+from pathlib import Path
 
-def word_count(path: str) -> int:
+
+def word_count(path: str | Path) -> int:
     """Zählt Wörter (Regex \w+) in einer Datei."""
     try:
         with open(path, encoding="utf-8") as f:  # schließt sich von selbst
@@ -43,3 +46,7 @@ def word_count(path: str) -> int:
         return 0
     finally:
         print("Analyse abgeschlossen.")
+
+
+res = word_count(Path(__file__).parent / "demo.txt")
+print(res)

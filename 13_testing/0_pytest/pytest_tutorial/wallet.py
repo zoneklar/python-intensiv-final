@@ -53,9 +53,26 @@ class Wallet:
         """
         # Hinweis: Abhängigkeit zu externer API ist schlecht testbar
         status_code = self.update_payment_service(amount)
+
         if status_code != 200:
             raise ServiceUnavailable(f"Payment error. Status code: {status_code}")
+
         self.balance += amount
+
+    def add_cash_test(self, amount: int) -> None:
+        """
+        Anfrage an ask_api_echo. Diese gibt tuple 
+        von Statuscode und Dict zurück
+        """
+        # Hinweis: Abhängigkeit zu externer API ist schlecht testbar
+        status_code, json = self.ask_api_echo("test")
+
+        if status_code != 200:
+            raise ServiceUnavailable(f"Payment error. Status code: {status_code}")
+
+        if json["echo"] == "TEST":
+            self.balance += amount
+
 
     def update_payment_service(self, amount: int) -> int:
         """
@@ -65,6 +82,9 @@ class Wallet:
         print("Updating payment service with amount:", amount)
         response = requests.get("https://example.com", params={"amount": amount})
         return response.status_code
+
+    def ask_api_echo(self, value) -> tuple[int, dict]
+        return 200, {"echo:", value.upper()}
 
 
 if __name__ == "__main__":
@@ -83,3 +103,5 @@ if __name__ == "__main__":
         print(e)
 
     print("Final balance:", wallet.balance)
+
+    print(wallet.ask_api_echo("hallo"))

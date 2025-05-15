@@ -14,3 +14,22 @@ werden sollte.
 Vererbung fördert Code-Wiederverwendung und hilft bei der Modellierung
 von „ist-ein“-Beziehungen.
 """
+
+
+class Hero:
+    def __init__(self, name: str):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+
+class MarvelHero(Hero):
+    def __init__(self, name: str, points: int):
+        super().__init__(name)
+        self.points = points
+
+
+superman = MarvelHero(name="Superman", points=34)
+print(vars(superman))  # {'name': 'Superman', 'points': 34}
+print(superman)  # __str__ von Hero
