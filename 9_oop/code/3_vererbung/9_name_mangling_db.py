@@ -1,3 +1,0 @@
-"""
-Datenbank Verbdindung Beispiel
-"""

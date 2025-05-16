@@ -42,3 +42,19 @@ Wichtig:
 - Vergleichbarkeit macht Klassen sortierbar und einsatzbereit in Sets,
   Listen, Priority Queues usw.
 """
+
+from dataclasses import dataclass, field
+
+
+@dataclass(order=True)
+class Product:
+    price: float
+    name: str = field(compare=False)
+
+
+p1 = Product(10.0, "Buch")
+p2 = Product(15.0, "Stift")
+
+
+print(p1 < p2)
+print(p1 >= p2)

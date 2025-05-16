@@ -11,7 +11,12 @@ from pathlib import Path
 
 # --- Datei kopieren ---
 source_file = Path(__file__).parent / "source.txt"
-destination_file = Path(__file__).parent / "destination.txt"
+destination_file = Path(__file__).parent / "neu.txt"
 
-source_dir = Path(__file__).parent / "data"
-destination_dir = Path(__file__).parent / "backup"
+# Verzeichnis kopieren mit copytree
+# source_dir = Path(__file__).parent / "data"
+# destination_dir = Path(__file__).parent / "backup"
+# shutil.copytree(source_dir, destination_dir)
+
+return_value = shutil.copy(source_file, destination_file)
+print(return_value)

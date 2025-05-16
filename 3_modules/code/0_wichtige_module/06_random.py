@@ -13,3 +13,9 @@ Wichtige Funktionen:
 - random.choices(seq, k=n): Ziehe n Elemente mit Zurücklegen
 - random.sample(seq, k): Ziehe k eindeutige Elemente ohne Zurücklegen
 """
+
+import random
+
+
+personen = ["bob", "alice", "Grumpy"]
+print(random.choice(personen))

@@ -28,3 +28,18 @@ Beispiel:
 __post_init__ ist eine einfache Möglichkeit, individuelle Logik in
 automatisch generierten Klassen unterzubringen.
 """
+
+from dataclasses import dataclass
+
+
+@dataclass
+class Person:
+    name: str
+    age: int
+
+    def __post_init__(self):
+        if self.age < 0:
+            raise ValueError("Name darf nicht negativ sein.")
+
+
+bob = Person(name="Bob", age=3)

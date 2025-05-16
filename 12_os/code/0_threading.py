@@ -10,7 +10,7 @@ from queue import Queue  # threadsafe queue
 def fn(identifier: int, q: Queue):
     """Schlafende funktion."""
     print(f"I am {identifier}")
-    time.sleep(2)
+    time.sleep(2)  # blockiert den Thread
     print(f"I am {identifier}, i am finished")
     q.put(f"{identifier} ist fertig.")
 

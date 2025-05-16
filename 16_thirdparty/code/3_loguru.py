@@ -29,8 +29,13 @@ logger.critical("Kritisch: Systemproblem")
 # ---------------------------------------------
 # Ausgabe in Datei mit Rotation ab 500 KB
 # ---------------------------------------------
+logger.remove()  # Alten logger löschen
+
 logger.add(
-    "logfile.log", format="{time} {level} {message}", rotation="500 KB", level="INFO"
+    "logfile.log",
+    format="{time} {level} {message}",
+    rotation="500 KB",
+    level="DEBUG",
 )
 logger.info("Diese Nachricht geht in die Datei")
 

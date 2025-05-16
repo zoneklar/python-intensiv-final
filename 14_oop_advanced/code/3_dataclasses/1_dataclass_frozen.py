@@ -27,3 +27,20 @@ Dies ist besonders nützlich:
 Hinweis: frozen=True erzeugt automatisch eine `__hash__`-Methode,
 wenn möglich – z. B. wenn alle Felder selbst hashbar sind.
 """
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Point:
+    x: int
+    y: int
+
+
+p = Point(1, 2)
+# p.x = 10
+# p.z = 21
+
+# Objekt als Key in einem Dict nutzen
+d = {p: "xzy"}
+print(d)

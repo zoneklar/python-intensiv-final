@@ -1,0 +1,26 @@
+2025-05-16T15:20:28.269255+0200 INFO Diese Nachricht geht in die Datei
+2025-05-16T15:20:28.270735+0200 INFO Wird geloggt, da Filter passt
+2025-05-16T15:20:28.270993+0200 ERROR An error has been caught in function '<module>', process 'MainProcess' (15140), thread 'MainThread' (10924):
+Traceback (most recent call last):
+
+> File "c:\Users\plix\stuff\kurse\python-intensiv\16_thirdparty\code\3_loguru.py", line 57, in <module>
+    div_by_zero()  # auskommentiert für Sicherheit
+    └ <function div_by_zero at 0x00000167D5306480>
+
+  File "c:\Users\plix\stuff\kurse\python-intensiv\16_thirdparty\code\3_loguru.py", line 54, in div_by_zero
+    1 / 0
+
+ZeroDivisionError: division by zero
+2025-05-16T15:21:23.445057+0200 INFO Diese Nachricht geht in die Datei
+2025-05-16T15:21:23.446281+0200 INFO Wird geloggt, da Filter passt
+2025-05-16T15:21:23.446519+0200 ERROR An error has been caught in function '<module>', process 'MainProcess' (15604), thread 'MainThread' (9040):
+Traceback (most recent call last):
+
+> File "c:\Users\plix\stuff\kurse\python-intensiv\16_thirdparty\code\3_loguru.py", line 57, in <module>
+    div_by_zero()  # auskommentiert für Sicherheit
+    └ <function div_by_zero at 0x000001D033C16480>
+
+  File "c:\Users\plix\stuff\kurse\python-intensiv\16_thirdparty\code\3_loguru.py", line 54, in div_by_zero
+    1 / 0
+
+ZeroDivisionError: division by zero
